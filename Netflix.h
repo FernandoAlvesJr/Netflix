@@ -1,8 +1,31 @@
+#include <iostream>
 #include <string>
+//#include "Data.h"
 
-using std::string
+using namespace std;
 
 class Netflix{
+	public:
+		Netflix(); //Construtor
+		Netflix(string); //Construtor
+		Netflix(const Netflix &); //Construtor de Cópia
+		void setCnpj(int);
+		int getCnpj();
+		void setVelMax(float);
+		float getVelMax();
+		void setLogin(const string &);
+		string getLogin();
+		void setSenha(const string &);
+		string getSenha();
+		void setNome(const string &);
+		string getNome();
+		void setApelido(const string &);
+		string getApelido();
+		void setFilmeAtual(const string &);
+		string getFilmeAtual();
+		int verificaSenha(const string &);
+		void benvindo(const string &) const;
+	
 	private:
 		int cnpj;
 		float vel_max;
@@ -11,16 +34,10 @@ class Netflix{
 		string nome;
 		string apelido;
 		string filmeAtual;
-		const int MAXFILMESMES;
+		const int maxFilmesMes;
 		static int gateway;
-		const static int ACESSOSSIMULTANEOS=1;
-		int acessos;
-		int numFilmesMes;
-	public:
-		Netflix(String &);
-		int verificaSenha(const string &);
-		int verificaLogin(const string &);
-		int numFilmesMes();
-		void verificaAcessos();
-		void boasVindas();
-}
+		const static int acessosSimultaneos=1;
+		//const Data ultimoAcesso;
+	
+};
+
