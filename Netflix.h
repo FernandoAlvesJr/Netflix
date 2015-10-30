@@ -1,8 +1,12 @@
 #include <iostream>
 #include <string>
+#include "Filme.h"
+#include "Serie.h"
+#include <vector>
 //#include "Data.h"
 
 using namespace std;
+
 
 class Netflix{
 	public:
@@ -24,7 +28,9 @@ class Netflix{
 		string getFilmeAtual();
 		int verificaSenha(const string &);
 		void benvindo(const string &) const;
-		void adicionarUsuario( int );
+		void adicionarUsuario( string );
+		void addSerie(int = 0 , const string & = "Serie default", const string & = "genero defaul", int = 99);
+		void addFilme(int = 0, const string & = "Filme default", float = 0.0, int = 0, int = 0);
 	
 	private:
 		int cnpj;
@@ -39,6 +45,9 @@ class Netflix{
 		const static int acessosSimultaneos=1;
 		string *usuario;
 		int numUsuarios;
+		vector<Serie *> series;
+		vector<Filme *> filmes;
+		
 		//const Data ultimoAcesso;
 	
 };
